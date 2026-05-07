@@ -1,21 +1,191 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peak Athletic Wear</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+}
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+border-bottom:2px solid #222;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+letter-spacing:2px;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+background:#1a1a1a;
+}
+
+.hero h2{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#bbb;
+font-size:18px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:40px;
+}
+
+.product{
+background:#1c1c1c;
+border-radius:12px;
+overflow:hidden;
+text-align:center;
+padding-bottom:20px;
+transition:0.3s;
+}
+
+.product:hover{
+transform:scale(1.02);
+}
+
+.product img{
+width:100%;
+height:400px;
+object-fit:cover;
+}
+
+.product h3{
+margin:15px 0 10px;
+}
+
+.price{
+font-size:22px;
+margin-bottom:15px;
+}
+
+select{
+padding:10px;
+width:80%;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
+}
+
+button{
+background:white;
+color:black;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#ddd;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#777;
+}
+</style>
 </head>
 
-<body style="background:black; color:white; text-align:center; font-family:Arial;">
+<body>
 
-<h1>PEAK ATHLETIC WEAR</h1>
-<p>Performance. Comfort. Style.</p>
+<header>
+<h1>PEAK ATHLETIC</h1>
+</header>
 
-<img src="A1B25F53-BDC4-4777-A00D-E691AF39B106.png" width="300">
+<section class="hero">
+<h2>Train At Your Peak</h2>
+<p>Premium athletic wear built for performance and comfort.</p>
+</section>
 
-<br><br>
+<section class="products">
 
-<button style="padding:12px 25px; font-size:18px;">
-Shop Now
+<div class="product">
+<img src="YOURIMAGE1.jpg">
+<h3>White Compression Tee</h3>
+<div class="price">$35</div>
+
+<select>
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br>
+
+<button onclick="window.location.href='https://cash.app/$joshuahdu'">
+Buy Now
 </button>
+</div>
+
+<div class="product">
+<img src="YOURIMAGE2.jpg">
+<h3>Black Compression Tee</h3>
+<div class="price">$35</div>
+
+<select>
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br>
+
+<button onclick="window.location.href='https://cash.app/$joshuahdu'">
+Buy Now
+</button>
+</div>
+
+<div class="product">
+<img src="YOURIMAGE3.jpg">
+<h3>Red Performance Tee</h3>
+<div class="price">$40</div>
+
+<select>
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br>
+
+<button onclick="window.location.href='https://cash.app/$joshuahdu'">
+Buy Now
+</button>
+</div>
+
+</section>
+
+<footer>
+© 2026 Peak Athletic Wear
+</footer>
 
 </body>
 </html>
