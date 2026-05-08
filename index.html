@@ -1,110 +1,146 @@
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peak Athletic Wear</title>
+<title>PEAK ATHLETIC</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, sans-serif;
-background:#111;
+}
+
+body{
+background:#0f0f0f;
 color:white;
 }
 
 header{
 background:black;
-padding:20px;
+padding:25px;
 text-align:center;
-border-bottom:2px solid #222;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 header h1{
-margin:0;
-font-size:40px;
-letter-spacing:2px;
+font-size:42px;
+letter-spacing:4px;
+}
+
+header p{
+color:#888;
+margin-top:8px;
 }
 
 .hero{
+height:70vh;
+background:url('A1B25FF3-BDC4-4777-A0DD-E691AF39B106.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:60px 20px;
-background:#1a1a1a;
+padding:20px;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.65);
+padding:40px;
+border-radius:12px;
 }
 
 .hero h2{
-font-size:50px;
-margin-bottom:10px;
+font-size:60px;
+margin-bottom:15px;
 }
 
 .hero p{
-color:#bbb;
-font-size:18px;
+font-size:20px;
+color:#ddd;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+padding:60px 40px;
 }
 
 .product{
-background:#1c1c1c;
-border-radius:12px;
+background:#181818;
+border-radius:15px;
 overflow:hidden;
-text-align:center;
-padding-bottom:20px;
 transition:0.3s;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
 .product:hover{
-transform:scale(1.02);
+transform:translateY(-8px);
 }
 
 .product img{
 width:100%;
-height:400px;
+height:420px;
 object-fit:cover;
 }
 
+.product-info{
+padding:25px;
+text-align:center;
+}
+
 .product h3{
-margin:15px 0 10px;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .price{
-font-size:22px;
-margin-bottom:15px;
+font-size:24px;
+color:#4da3ff;
+margin-bottom:20px;
 }
 
 select{
-padding:10px;
-width:80%;
-margin-bottom:15px;
+width:100%;
+padding:12px;
 border:none;
-border-radius:6px;
+border-radius:8px;
+background:#2b2b2b;
+color:white;
+margin-bottom:20px;
+font-size:16px;
 }
 
 button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
 background:white;
 color:black;
-border:none;
-padding:12px 25px;
-border-radius:30px;
+font-size:17px;
 font-weight:bold;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-background:#ddd;
+background:#dcdcdc;
 }
 
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 color:#777;
+border-top:1px solid #222;
 }
+
 </style>
 </head>
 
@@ -112,80 +148,105 @@ color:#777;
 
 <header>
 <h1>PEAK ATHLETIC</h1>
+<p>Performance Wear Built For Athletes</p>
 </header>
 
 <section class="hero">
-<h2>Train At Your Peak</h2>
-<p>Premium athletic wear built for performance and comfort.</p>
+<div class="hero-overlay">
+<h2>TRAIN AT YOUR PEAK</h2>
+<p>Premium Compression Wear For Sports & Training</p>
+</div>
 </section>
 
 <section class="products">
 
+<!-- WHITE SHIRT -->
+
 <div class="product">
-<img src="YOURIMAGE1.jpg">
+
+<img src="A1B25FF3-BDC4-4777-A0DD-E691AF39B106.png">
+
+<div class="product-info">
+
 <h3>White Compression Tee</h3>
-<div class="price">$30</div>
+
+<div class="price">$35</div>
 
 <select>
 <option>Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
+<option>Extra Small</option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
 </select>
-
-<br>
 
 <button onclick="window.location.href='https://cash.app/$joshuahdu'">
 Buy Now
 </button>
+
+</div>
 </div>
 
+<!-- BLACK SHIRT -->
+
 <div class="product">
-<img src="YOURIMAGE2.jpg">
+
+<img src="black-shirt.png">
+
+<div class="product-info">
+
 <h3>Black Compression Tee</h3>
-<div class="price">$30</div>
+
+<div class="price">$35</div>
 
 <select>
 <option>Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
+<option>Extra Small</option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
 </select>
-
-<br>
 
 <button onclick="window.location.href='https://cash.app/$joshuahdu'">
 Buy Now
 </button>
+
+</div>
 </div>
 
+<!-- NAVY SHIRT -->
+
 <div class="product">
-<img src="Ihttps://mail.google.com/mail/u/0?ui=2&ik=893f730c9e&attid=0.2&permmsgid=msg-a:r906735494918554357&th=19dfed1df65e8969&view=att&disp=safe&realattid=19dfed1c0028c1337a11&zw.jpg">
-<h3>Red Performance Tee</h3>
-<div class="price">$30</div>
+
+<img src="navy-shirt.png">
+
+<div class="product-info">
+
+<h3>Navy Compression Tee</h3>
+
+<div class="price">$35</div>
 
 <select>
 <option>Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
+<option>Extra Small</option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
 </select>
-
-<br>
 
 <button onclick="window.location.href='https://cash.app/$joshuahdu'">
 Buy Now
 </button>
+
+</div>
 </div>
 
 </section>
 
 <footer>
-© 2026 Peak Athletic Wear
+© 2026 PEAK ATHLETIC
 </footer>
 
 </body>
 </html>
+
