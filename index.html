@@ -1,109 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Peak Athletic Wear</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Arial, sans-serif;
-background:#111;
+background:#0f0f0f;
 color:white;
 }
+
+/* HEADER */
 
 header{
 background:black;
 padding:20px;
 text-align:center;
-border-bottom:2px solid #222;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 header h1{
-margin:0;
-font-size:40px;
+font-size:38px;
 letter-spacing:2px;
 }
 
+/* HERO */
+
 .hero{
+height:85vh;
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("peak-hero.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:60px 20px;
-background:#1a1a1a;
+padding:20px;
+}
+
+.hero-content{
+max-width:700px;
 }
 
 .hero h2{
-font-size:50px;
-margin-bottom:10px;
+font-size:70px;
+margin-bottom:15px;
 }
 
 .hero p{
-color:#bbb;
-font-size:18px;
+font-size:22px;
+color:#ddd;
+margin-bottom:25px;
+}
+
+.hero button{
+background:white;
+color:black;
+border:none;
+padding:16px 35px;
+font-size:16px;
+font-weight:bold;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+background:#ddd;
+transform:scale(1.03);
+}
+
+/* PRODUCTS */
+
+.products-title{
+text-align:center;
+padding:70px 20px 20px;
+font-size:40px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
 padding:40px;
 }
 
 .product{
-background:#1c1c1c;
-border-radius:12px;
+background:#1a1a1a;
+border-radius:18px;
 overflow:hidden;
-text-align:center;
-padding-bottom:20px;
 transition:0.3s;
+border:1px solid #222;
 }
 
 .product:hover{
-transform:scale(1.02);
+transform:translateY(-5px);
 }
 
 .product img{
 width:100%;
-height:400px;
+height:430px;
 object-fit:cover;
+display:block;
+}
+
+.product-info{
+padding:22px;
+text-align:center;
 }
 
 .product h3{
-margin:15px 0 10px;
+font-size:26px;
+margin-bottom:10px;
 }
 
 .price{
-font-size:22px;
-margin-bottom:15px;
+font-size:24px;
+font-weight:bold;
+margin-bottom:18px;
 }
 
 select{
-padding:10px;
-width:80%;
-margin-bottom:15px;
+width:100%;
+padding:14px;
 border:none;
-border-radius:6px;
+border-radius:8px;
+margin-bottom:18px;
+font-size:16px;
 }
 
-button{
+button.buy-btn{
+width:100%;
 background:white;
 color:black;
 border:none;
-padding:12px 25px;
-border-radius:30px;
+padding:15px;
+font-size:16px;
 font-weight:bold;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button.buy-btn:hover{
+background:#dcdcdc;
+}
+
+/* CART */
+
+.cart{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+color:black;
+padding:12px 18px;
+border-radius:40px;
+font-weight:bold;
+z-index:1000;
+}
+
+/* CHECKOUT MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+color:black;
+width:90%;
+max-width:500px;
+padding:35px;
+border-radius:18px;
+}
+
+.modal-content h2{
+margin-bottom:20px;
+}
+
+.modal-content input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+}
+
+.checkout-btn{
+width:100%;
+padding:16px;
+border:none;
+background:black;
+color:white;
+font-size:17px;
+font-weight:bold;
+border-radius:40px;
 cursor:pointer;
 }
 
-button:hover{
-background:#ddd;
+.close{
+float:right;
+font-size:28px;
+cursor:pointer;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 color:#777;
+font-size:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:70vh;
+}
+
+.hero h2{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.products{
+padding:20px;
+}
+
 }
 
 </style>
@@ -111,28 +264,53 @@ color:#777;
 
 <body>
 
+<div class="cart">
+🛒 Cart: <span id="cart-count">0</span>
+</div>
+
 <header>
 <h1>PEAK ATHLETIC</h1>
 </header>
 
+<!-- HERO SECTION -->
+
 <section class="hero">
+
+<div class="hero-content">
+
 <h2>Train At Your Peak</h2>
-<p>Premium athletic wear built for performance and comfort.</p>
+
+<p>
+Premium athletic wear built for performance, comfort, and confidence.
+</p>
+
+<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+Shop Collection
+</button>
+
+</div>
+
 </section>
 
-<section class="products">
+<!-- PRODUCTS -->
 
-<!-- WHITE SHIRT -->
+<h2 class="products-title">Featured Collection</h2>
+
+<section class="products" id="products">
+
+<!-- WHITE -->
 
 <div class="product">
 
-<img src="0FFBD9A2-A680-408D-96EB-A99F97F32FAD.jpeg" alt="White Compression Tee">
+<img src="white-compression.jpg" alt="White Compression Tee">
+
+<div class="product-info">
 
 <h3>White Compression Tee</h3>
 
 <div class="price">$35</div>
 
-<select id="whiteSize">
+<select id="size1">
 <option value="">Select Size</option>
 <option>S</option>
 <option>M</option>
@@ -140,25 +318,26 @@ color:#777;
 <option>XL</option>
 </select>
 
-<br>
-
-<button onclick="buyNow('whiteSize')">
-Buy Now
+<button class="buy-btn" onclick="addToCart('White Compression Tee',35,'size1')">
+Add To Cart
 </button>
 
 </div>
+</div>
 
-<!-- BLACK SHIRT -->
+<!-- BLACK -->
 
 <div class="product">
 
-<img src="73B81421-ACCE-4EFE-89FD-92783946B980.jpeg" alt="Black Compression Tee">
+<img src="black-compression.jpg" alt="Black Compression Tee">
+
+<div class="product-info">
 
 <h3>Black Compression Tee</h3>
 
 <div class="price">$35</div>
 
-<select id="blackSize">
+<select id="size2">
 <option value="">Select Size</option>
 <option>S</option>
 <option>M</option>
@@ -166,51 +345,26 @@ Buy Now
 <option>XL</option>
 </select>
 
-<br>
-
-<button onclick="buyNow('blackSize')">
-Buy Now
+<button class="buy-btn" onclick="addToCart('Black Compression Tee',35,'size2')">
+Add To Cart
 </button>
 
 </div>
-
-<!-- MAROON SHIRT -->
-
-<div class="product">
-
-<img src="DCB4BD84-E9AF-4D2A-B175-5BB5FB0664EA.jpeg" alt="Maroon Performance Tee">
-
-<h3>Maroon Performance Tee</h3>
-
-<div class="price">$40</div>
-
-<select id="maroonSize">
-<option value="">Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<br>
-
-<button onclick="buyNow('maroonSize')">
-Buy Now
-</button>
-
 </div>
 
-<!-- NAVY SHIRT -->
+<!-- NAVY -->
 
 <div class="product">
 
-<img src="27583F2A-AA0D-4282-B16E-1FBCC385C948.jpeg" alt="Navy Compression Tee">
+<img src="navy-compression.jpg" alt="Navy Compression Tee">
+
+<div class="product-info">
 
 <h3>Navy Compression Tee</h3>
 
 <div class="price">$40</div>
 
-<select id="navySize">
+<select id="size3">
 <option value="">Select Size</option>
 <option>S</option>
 <option>M</option>
@@ -218,15 +372,89 @@ Buy Now
 <option>XL</option>
 </select>
 
-<br>
+<button class="buy-btn" onclick="addToCart('Navy Compression Tee',40,'size3')">
+Add To Cart
+</button>
 
-<button onclick="buyNow('navySize')">
-Buy Now
+</div>
+</div>
+
+<!-- MAROON -->
+
+<div class="product">
+
+<img src="maroon-performance.jpg" alt="Maroon Performance Tee">
+
+<div class="product-info">
+
+<h3>Maroon Performance Tee</h3>
+
+<div class="price">$40</div>
+
+<select id="size4">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="buy-btn" onclick="addToCart('Maroon Performance Tee',40,'size4')">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+</section>
+
+<!-- CHECKOUT BUTTON -->
+
+<div style="text-align:center; padding-bottom:60px;">
+
+<button class="hero button"
+style="
+background:white;
+color:black;
+padding:18px 40px;
+border:none;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+"
+onclick="openCheckout()">
+Proceed To Checkout
 </button>
 
 </div>
 
-</section>
+<!-- CHECKOUT MODAL -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeCheckout()">&times;</span>
+
+<h2>Secure Checkout</h2>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Card Number">
+
+<input type="text" placeholder="MM/YY">
+
+<input type="text" placeholder="CVV">
+
+<button class="checkout-btn" onclick="completePurchase()">
+Complete Purchase
+</button>
+
+</div>
+</div>
 
 <footer>
 © 2026 Peak Athletic Wear
@@ -234,16 +462,59 @@ Buy Now
 
 <script>
 
-function buyNow(sizeId){
+let cartCount = 0;
+
+function addToCart(product, price, sizeId){
 
 const size = document.getElementById(sizeId).value;
 
 if(size === ""){
-alert("Please select a size first.");
+alert("Please select a size.");
 return;
 }
 
-window.location.href='https://cash.app/$joshuahdu';
+cartCount++;
+
+document.getElementById("cart-count").innerText = cartCount;
+
+alert(product + " (" + size + ") added to cart.");
+
+}
+
+function openCheckout(){
+
+if(cartCount === 0){
+alert("Your cart is empty.");
+return;
+}
+
+document.getElementById("checkoutModal").style.display = "flex";
+
+}
+
+function closeCheckout(){
+document.getElementById("checkoutModal").style.display = "none";
+}
+
+function completePurchase(){
+
+alert("Order placed successfully!");
+
+/*
+REAL PAYMENT INTEGRATION:
+
+To actually receive money professionally,
+replace this with Stripe Checkout.
+
+Stripe is the best option because:
+- customers pay with cards
+- looks professional
+- money goes directly to your bank
+- no Cash App tag visible
+
+*/
+
+window.location.href = "https://buy.stripe.com/";
 
 }
 
@@ -251,4 +522,3 @@ window.location.href='https://cash.app/$joshuahdu';
 
 </body>
 </html>
-
