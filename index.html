@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,107 +19,91 @@ background:black;
 padding:20px;
 text-align:center;
 border-bottom:2px solid #222;
-position:sticky;
-top:0;
-z-index:100;
 }
 
 header h1{
 margin:0;
 font-size:40px;
-letter-spacing:3px;
+letter-spacing:2px;
 }
 
 .hero{
 text-align:center;
-padding:80px 20px;
-background:linear-gradient(to bottom,#111,#1a1a1a);
+padding:60px 20px;
+background:#1a1a1a;
 }
 
 .hero h2{
-font-size:55px;
+font-size:50px;
 margin-bottom:10px;
 }
 
 .hero p{
 color:#bbb;
-font-size:20px;
-max-width:700px;
-margin:auto;
+font-size:18px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
-padding:50px;
+padding:40px;
 }
 
 .product{
 background:#1c1c1c;
-border-radius:14px;
+border-radius:12px;
 overflow:hidden;
 text-align:center;
-padding-bottom:25px;
+padding-bottom:20px;
 transition:0.3s;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 .product:hover{
-transform:translateY(-5px);
+transform:scale(1.02);
 }
 
 .product img{
 width:100%;
-height:420px;
+height:400px;
 object-fit:cover;
 }
 
 .product h3{
-margin:18px 0 10px;
-font-size:28px;
+margin:15px 0 10px;
 }
 
 .price{
-font-size:24px;
-margin-bottom:18px;
-font-weight:bold;
+font-size:22px;
+margin-bottom:15px;
 }
 
 select{
-padding:12px;
+padding:10px;
 width:80%;
-margin-bottom:18px;
+margin-bottom:15px;
 border:none;
-border-radius:8px;
-font-size:16px;
-background:#f1f1f1;
+border-radius:6px;
 }
 
 button{
 background:white;
 color:black;
 border:none;
-padding:14px 28px;
+padding:12px 25px;
 border-radius:30px;
 font-weight:bold;
 cursor:pointer;
-font-size:16px;
-transition:0.2s;
 }
 
 button:hover{
 background:#ddd;
-transform:scale(1.03);
 }
 
 footer{
 text-align:center;
-padding:35px;
+padding:30px;
 color:#777;
-font-size:15px;
-border-top:1px solid #222;
-margin-top:20px;
 }
 
 </style>
@@ -133,14 +117,12 @@ margin-top:20px;
 
 <section class="hero">
 <h2>Train At Your Peak</h2>
-<p>
-Premium athletic wear built for performance, comfort, and confidence.
-</p>
+<p>Premium athletic wear built for performance and comfort.</p>
 </section>
 
 <section class="products">
 
-<!-- WHITE TEE -->
+<!-- WHITE SHIRT -->
 
 <div class="product">
 
@@ -160,13 +142,13 @@ Premium athletic wear built for performance, comfort, and confidence.
 
 <br>
 
-<button onclick="buyProduct('White Compression Tee', 'whiteSize')">
+<button onclick="buyNow('whiteSize')">
 Buy Now
 </button>
 
 </div>
 
-<!-- BLACK TEE -->
+<!-- BLACK SHIRT -->
 
 <div class="product">
 
@@ -186,39 +168,13 @@ Buy Now
 
 <br>
 
-<button onclick="buyProduct('Black Compression Tee', 'blackSize')">
+<button onclick="buyNow('blackSize')">
 Buy Now
 </button>
 
 </div>
 
-<!-- NAVY TEE -->
-
-<div class="product">
-
-<img src="27583F2A-AA0D-4282-B16E-1FBCC385C948.jpeg" alt="Navy Compression Tee">
-
-<h3>Navy Compression Tee</h3>
-
-<div class="price">$40</div>
-
-<select id="navySize">
-<option value="">Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<br>
-
-<button onclick="buyProduct('Navy Compression Tee', 'navySize')">
-Buy Now
-</button>
-
-</div>
-
-<!-- MAROON TEE -->
+<!-- MAROON SHIRT -->
 
 <div class="product">
 
@@ -238,7 +194,33 @@ Buy Now
 
 <br>
 
-<button onclick="buyProduct('Maroon Performance Tee', 'maroonSize')">
+<button onclick="buyNow('maroonSize')">
+Buy Now
+</button>
+
+</div>
+
+<!-- NAVY SHIRT -->
+
+<div class="product">
+
+<img src="27583F2A-AA0D-4282-B16E-1FBCC385C948.jpeg" alt="Navy Compression Tee">
+
+<h3>Navy Compression Tee</h3>
+
+<div class="price">$40</div>
+
+<select id="navySize">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br>
+
+<button onclick="buyNow('navySize')">
 Buy Now
 </button>
 
@@ -252,7 +234,7 @@ Buy Now
 
 <script>
 
-function buyProduct(productName, sizeId){
+function buyNow(sizeId){
 
 const size = document.getElementById(sizeId).value;
 
@@ -261,7 +243,7 @@ alert("Please select a size first.");
 return;
 }
 
-window.location.href = "https://cash.app/$joshuahdu";
+window.location.href='https://cash.app/$joshuahdu';
 
 }
 
